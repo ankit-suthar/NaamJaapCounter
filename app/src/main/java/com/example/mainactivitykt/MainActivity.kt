@@ -11,9 +11,11 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,8 +87,21 @@ fun CounterApp() {
 
     Column(
         modifier = Modifier.fillMaxSize().padding(16.dp),
-        verticalArrangement = Arrangement.Center
+//        verticalArrangement = Arrangement.Center
     ) {
+        Spacer(modifier = Modifier.height(80.dp))
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center // Centers the text inside the Row
+        ) {
+            Text(
+                text = "शिव",
+                style = MaterialTheme.typography.displayLarge.copy(fontSize = 200.sp), // Bigger font size
+                color = Color.Black
+            )
+        }
+
         OutlinedTextField(
             value = countPerMinute,
             onValueChange = { countPerMinute = it },
